@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor Medeiros | Tráfego Pago, Design & Desenvolvimento Python/Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #09090b;
+            color: #f4f4f5;
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .glass-card {
+            background: rgba(24, 24, 27, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .tab-active {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            border-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 w-full z-50 glass-card border-b border-zinc-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="#" class="font-display font-bold text-xl tracking-tight flex items-center gap-2">
+                <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center text-white text-sm font-bold">VM</span>
+                <span>Victor<span class="text-sky-400">.dev</span></span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm text-zinc-400">
+                <a href="#servicos" class="hover:text-white transition">Especialidades</a>
+                <a href="#trajetoria" class="hover:text-white transition">Trajetória & Base Técnica</a>
+                <a href="#orcamento" class="hover:text-white transition">Solicitar Orçamento</a>
+            </nav>
+            <a href="#orcamento" class="px-4 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-zinc-950 font-semibold text-sm transition shadow-lg shadow-sky-500/20">
+                Falar Comigo
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-indigo-900/20 via-zinc-950 to-zinc-950 -z-10"></div>
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs text-sky-400 mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                +6 anos de experiência em Tráfego Pago • Disponível para novos projetos
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-bold tracking-tight mb-6 leading-tight">
+                Estratégia, Design e Tecnologia para <br class="hidden sm:block">
+                <span class="gradient-text">escalar o seu negócio.</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-zinc-400 text-base sm:text-lg mb-10 leading-relaxed">
+                Olá, sou <strong class="text-zinc-200">Victor Medeiros</strong>. Com <strong class="text-sky-400">6 anos de experiência em gestão de tráfego pago (desde 2020)</strong>, uno anúncios orientados a dados, design de alta conversão e desenvolvimento Front-End & Python para transformar processos e multiplicar resultados.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#orcamento" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:opacity-95 text-white font-semibold transition shadow-xl shadow-indigo-500/20">
+                    Solicitar Orçamento Personalizado
+                </a>
+                <a href="#servicos" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-200 font-medium transition">
+                    Explorar Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Separados por Pilar -->
+    <section id="servicos" class="py-20 px-4 sm:px-6 border-t border-zinc-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Minhas Frentes de Atuação</h2>
+                <p class="text-zinc-400 max-w-xl mx-auto">Selecione uma especialidade abaixo para filtrar ou visualize todas as soluções integradas que entrego para empresas e profissionais.</p>
+            </div>
+
+            <!-- Filtros por Pilar -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12" id="filter-buttons">
+                <button onclick="filterServices('all')" data-filter="all" class="tab-active px-5 py-2.5 rounded-xl text-sm font-medium border border-zinc-800 transition">
+                    Todos os Serviços
+                </button>
+                <button onclick="filterServices('trafego')" data-filter="trafego" class="px-5 py-2.5 rounded-xl text-sm font-medium bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800 transition">
+                    📈 Gestor de Tráfego Pago (6 Anos)
+                </button>
+                <button onclick="filterServices('design')" data-filter="design" class="px-5 py-2.5 rounded-xl text-sm font-medium bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800 transition">
+                    🎨 Designer & Edição Criativa
+                </button>
+                <button onclick="filterServices('dev')" data-filter="dev" class="px-5 py-2.5 rounded-xl text-sm font-medium bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800 transition">
+                    💻 Front-End & Python
+                </button>
+            </div>
+
+            <!-- Grid de Serviços -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="services-grid">
+                
+                <!-- Card 1: Tráfego Pago -->
+                <div class="service-card glass-card rounded-2xl p-8 flex flex-col justify-between hover:border-sky-500/40 transition duration-300" data-category="trafego">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-2xl">
+                                📈
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-sky-500/10 border border-sky-500/20 text-[11px] font-semibold text-sky-400">
+                                Desde 2020 • 6 Anos
+                            </span>
+                        </div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-sky-400">Performance & Aquisição</span>
+                        <h3 class="text-2xl font-bold mt-1 mb-4">Gestão de Tráfego Pago</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                            Certificado em Meta Ads e Google Ads pela Comunidade Sobral de Tráfego (Pedro Sobral), com 6 anos de experiência prática gerenciando campanhas para negócios locais, e-commerce, advocacia, clínicas, consórcios e outros nichos.
+                        </p>
+                        <ul class="space-y-3 text-sm text-zinc-300 mb-8">
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-sky-400 mt-0.5">✓</span>
+                                <span>Meta Ads (Instagram & Facebook Ads)</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-sky-400 mt-0.5">✓</span>
+                                <span>Google Ads (Rede de Pesquisa, Shopping & Local)</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-sky-400 mt-0.5">✓</span>
+                                <span>TikTok Ads e estruturação de funis de conversão</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-sky-400 mt-0.5">✓</span>
+                                <span>Rastreamento avançado (Pixel, API de Conversões e ROI)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="selectServiceForQuote('Gestão de Tráfego Pago')" class="w-full py-3 rounded-xl bg-zinc-900 hover:bg-sky-500 hover:text-zinc-950 border border-zinc-800 font-semibold text-sm transition">
+                        Orçar Tráfego Pago →
+                    </button>
+                </div>
+
+                <!-- Card 2: Design & Edição -->
+                <div class="service-card glass-card rounded-2xl p-8 flex flex-col justify-between hover:border-purple-500/40 transition duration-300" data-category="design">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-2xl mb-6">
+                            🎨
+                        </div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-purple-400">Identidade & Criativos</span>
+                        <h3 class="text-2xl font-bold mt-1 mb-4">Design & Edição de Artes</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                            Criação visual estratégica pensada para reter atenção nos primeiros segundos, fortalecer o posicionamento da marca e aumentar a taxa de cliques (CTR).
+                        </p>
+                        <ul class="space-y-3 text-sm text-zinc-300 mb-8">
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-purple-400 mt-0.5">✓</span>
+                                <span>Criativos estáticos e carrosséis de alta conversão</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-purple-400 mt-0.5">✓</span>
+                                <span>Edição dinâmica de vídeos para Reels, TikTok e Ads</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-purple-400 mt-0.5">✓</span>
+                                <span>Identidade visual, social media e peças institucionais</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-purple-400 mt-0.5">✓</span>
+                                <span>Tratamento de imagens e materiais promocionais</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="selectServiceForQuote('Design & Edição de Artes')" class="w-full py-3 rounded-xl bg-zinc-900 hover:bg-purple-500 hover:text-white border border-zinc-800 font-semibold text-sm transition">
+                        Orçar Design & Edição →
+                    </button>
+                </div>
+
+                <!-- Card 3: Front-End & Python -->
+                <div class="service-card glass-card rounded-2xl p-8 flex flex-col justify-between hover:border-emerald-500/40 transition duration-300" data-category="dev">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-2xl mb-6">
+                            💻
+                        </div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Código & Automação</span>
+                        <h3 class="text-2xl font-bold mt-1 mb-4">Front-End & Python</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                            Desenvolvimento de páginas rápidas, sistemas web responsivos e automações inteligentes em Python para eliminar tarefas manuais repetitivas.
+                        </p>
+                        <ul class="space-y-3 text-sm text-zinc-300 mb-8">
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-emerald-400 mt-0.5">✓</span>
+                                <span>Landing Pages de alta velocidade (HTML5, CSS3, JS)</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-emerald-400 mt-0.5">✓</span>
+                                <span>Automação de processos e bots desktop com Python</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-emerald-400 mt-0.5">✓</span>
+                                <span>Sistemas de chamados, formulários e integração com Google Sheets</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-emerald-400 mt-0.5">✓</span>
+                                <span>Otimização de fluxos operacionais e suporte técnico</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="selectServiceForQuote('Desenvolvimento Front-End & Python')" class="w-full py-3 rounded-xl bg-zinc-900 hover:bg-emerald-500 hover:text-zinc-950 border border-zinc-800 font-semibold text-sm transition">
+                        Orçar Desenvolvimento →
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Trajetória & Base Técnica -->
+    <section id="trajetoria" class="py-20 px-4 sm:px-6 bg-zinc-950/60 border-t border-zinc-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-12">
+                <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">Credibilidade & Experiência</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">Trajetória em Marketing, TI & Processos</h2>
+                <p class="text-zinc-400 mt-3 max-w-2xl">
+                    6 anos de atuação contínua no mercado digital aliados à experiência sólida em gestão de TI, otimização de fluxos operacionais e atendimento de alta demanda em Sobral – CE.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Coluna Experiências -->
+                <div class="glass-card rounded-2xl p-8">
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                        <span class="text-sky-400">⚡</span> Experiência Profissional & Digital
+                    </h3>
+                    <div class="space-y-6 border-l-2 border-zinc-800 pl-5">
+                        <div class="relative">
+                            <span class="absolute -left-[27px] top-1.5 w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span class="text-xs text-emerald-400 font-semibold">2020 – Presente (6 Anos de Experiência)</span>
+                            <h4 class="font-bold text-zinc-100">Gestor de Tráfego Pago & Estrategista Digital</h4>
+                            <p class="text-sm text-zinc-400 mt-1">
+                                Formação e certificação em Meta Ads e Google Ads pela Comunidade Sobral de Tráfego (Pedro Sobral), atuando desde 2020 na captação de clientes e escala de vendas em múltiplos segmentos: mercados e negócios locais, e-commerce, escritórios de advocacia, clínicas médicas/odontológicas, consórcios, serviços especializados e mais.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mt-3">
+                                <span class="px-2.5 py-0.5 rounded-md bg-zinc-900 border border-zinc-800 text-[11px] text-sky-300">Negócios Locais</span>
+                                <span class="px-2.5 py-0.5 rounded-md bg-zinc-900 border border-zinc-800 text-[11px] text-sky-300">E-commerce</span>
+                                <span class="px-2.5 py-0.5 rounded-md bg-zinc-900 border border-zinc-800 text-[11px] text-sky-300">Advocacia</span>
+                                <span class="px-2.5 py-0.5 rounded-md bg-zinc-900 border border-zinc-800 text-[11px] text-sky-300">Clínicas</span>
+                                <span class="px-2.5 py-0.5 rounded-md bg-zinc-900 border border-zinc-800 text-[11px] text-sky-300">Consórcios</span>
+                                <span class="px-2.5 py-0.5 rounded-md bg-zinc-900 border border-zinc-800 text-[11px] text-sky-300">+ Diversos Nichos</span>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute -left-[27px] top-1.5 w-3 h-3 rounded-full bg-sky-500"></span>
+                            <span class="text-xs text-sky-400 font-semibold">2025 – 2026</span>
+                            <h4 class="font-bold text-zinc-100">Suporte Operacional e Gestão de TI — Clínica Dr. Faustino (PJ)</h4>
+                            <p class="text-sm text-zinc-400 mt-1">
+                                Gestão de infraestrutura de redes, disponibilidade de sistemas informatizados, padronização de fluxos operacionais e otimização da experiência de clientes e equipes.
+                            </p>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute -left-[27px] top-1.5 w-3 h-3 rounded-full bg-indigo-500"></span>
+                            <span class="text-xs text-indigo-400 font-semibold">2022 – 2025</span>
+                            <h4 class="font-bold text-zinc-100">Sistemas de Informação & Fluxos — Secretaria de Saúde & Policlínica de Sobral</h4>
+                            <p class="text-sm text-zinc-400 mt-1">
+                                Operação de sistemas oficiais de controle e regulação, conferência minuciosa de dados, organização documental e atendimento resolutivo ao público.
+                            </p>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute -left-[27px] top-1.5 w-3 h-3 rounded-full bg-zinc-600"></span>
+                            <span class="text-xs text-zinc-400 font-semibold">2021 – 2022</span>
+                            <h4 class="font-bold text-zinc-100">Gestão de Fluxos em Alta Demanda — North Shopping Sobral</h4>
+                            <p class="text-sm text-zinc-400 mt-1">
+                                Coordenação de triagem rápida, organização de grandes volumes de atendimento e comunicação assertiva sob alta rotatividade.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Formação, Certificações e Idiomas -->
+                <div class="space-y-8">
+                    <div class="glass-card rounded-2xl p-8">
+                        <h3 class="text-xl font-bold mb-5 flex items-center gap-2">
+                            <span class="text-emerald-400">🎓</span> Formação & Qualificações Técnicas
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                            <div class="p-3.5 rounded-xl bg-zinc-900/90 border border-zinc-800/80">
+                                <p class="font-semibold text-zinc-200">Certificação Meta Ads & Google Ads</p>
+                                <p class="text-xs text-zinc-400 mt-0.5">Comunidade Sobral de Tráfego (Pedro Sobral)</p>
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-zinc-900/90 border border-zinc-800/80">
+                                <p class="font-semibold text-zinc-200">Lógica de Programação & Python</p>
+                                <p class="text-xs text-zinc-400 mt-0.5">Fundação Bradesco & Formação Prática</p>
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-zinc-900/90 border border-zinc-800/80">
+                                <p class="font-semibold text-zinc-200">Informática & Pacote Office Avançado</p>
+                                <p class="text-xs text-zinc-400 mt-0.5">Excel, Relatórios & Sistemas (F. Bradesco)</p>
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-zinc-900/90 border border-zinc-800/80">
+                                <p class="font-semibold text-zinc-200">Graduação & Pós-Graduações</p>
+                                <p class="text-xs text-zinc-400 mt-0.5">Anhanguera • Técnico em Eletrotécnica & NR-10</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-8">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                            <span class="text-purple-400">🌎</span> Idiomas & Diferenciais
+                        </h3>
+                        <div class="flex flex-wrap gap-2.5 mb-5">
+                            <span class="px-3.5 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-200">🇺🇸 Inglês — Intermediário / Avançado</span>
+                            <span class="px-3.5 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-200">🇪🇸 Espanhol — Intermediário</span>
+                            <span class="px-3.5 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-200">🇮🇹 Italiano — Básico</span>
+                        </div>
+                        <p class="text-sm text-zinc-400 leading-relaxed">
+                            Visão analítica orientada à melhoria contínua, organização de processos e foco total em retorno prático para cada cliente atendido — desde o primeiro anúncio até o fechamento da venda.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Cadastro de Possíveis Clientes (Integrada ao Google Sheets) -->
+    <section id="orcamento" class="py-24 px-4 sm:px-6 border-t border-zinc-900 relative">
+        <div class="max-w-3xl mx-auto">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 border border-zinc-800 shadow-2xl">
+                <div class="text-center mb-8">
+                    <span class="inline-block px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold mb-3">
+                        Atendimento Direto • Orçamentos
+                    </span>
+                    <h2 class="text-3xl font-bold">Solicite seu Orçamento</h2>
+                    <p class="text-zinc-400 text-sm mt-2">
+                        Preencha seus dados abaixo. Seu cadastro vai direto para a minha planilha de atendimento para que eu entre em contato com uma proposta sob medida.
+                    </p>
+                </div>
+
+                <form id="lead-form" class="space-y-5">
+                    <!-- Campo Nome -->
+                    <div>
+                        <label for="lead-name" class="block text-sm font-medium text-zinc-300 mb-1.5">Seu Nome Completo *</label>
+                        <input type="text" id="lead-name" required placeholder="Ex: João Silva"
+                            class="w-full px-4 py-3 rounded-xl bg-zinc-900/90 border border-zinc-800 text-white placeholder-zinc-500 focus:outline-none focus:border-sky-500 transition">
+                    </div>
+
+                    <!-- Campo Nicho ou Não da Empresa -->
+                    <div>
+                        <div class="flex items-center justify-between mb-1.5">
+                            <label for="lead-niche" class="block text-sm font-medium text-zinc-300">Nicho da Empresa *</label>
+                            <label class="inline-flex items-center gap-2 text-xs text-sky-400 cursor-pointer select-none">
+                                <input type="checkbox" id="no-company-check" class="rounded bg-zinc-900 border-zinc-700 text-sky-500 focus:ring-0">
+                                <span>Ainda não tenho empresa / Projeto pessoal</span>
+                            </label>
+                        </div>
+                        <input type="text" id="lead-niche" required placeholder="Ex: Clínica, E-commerce, Advocacia, Consórcio, Mercado Local..."
+                            class="w-full px-4 py-3 rounded-xl bg-zinc-900/90 border border-zinc-800 text-white placeholder-zinc-500 focus:outline-none focus:border-sky-500 transition">
+                    </div>
+
+                    <!-- Campo Telefone para Contato -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="lead-phone" class="block text-sm font-medium text-zinc-300 mb-1.5">Telefone / WhatsApp *</label>
+                            <input type="tel" id="lead-phone" required placeholder="(88) 99999-9999" maxlength="15"
+                                class="w-full px-4 py-3 rounded-xl bg-zinc-900/90 border border-zinc-800 text-white placeholder-zinc-500 focus:outline-none focus:border-sky-500 transition">
+                        </div>
+                        <div>
+                            <label for="lead-service" class="block text-sm font-medium text-zinc-300 mb-1.5">Serviço de Interesse</label>
+                            <select id="lead-service"
+                                class="w-full px-4 py-3 rounded-xl bg-zinc-900/90 border border-zinc-800 text-white focus:outline-none focus:border-sky-500 transition">
+                                <option value="Gestão de Tráfego Pago">Gestão de Tráfego Pago</option>
+                                <option value="Design & Edição de Artes">Design & Edição de Artes</option>
+                                <option value="Desenvolvimento Front-End & Python">Desenvolvimento Front-End & Python</option>
+                                <option value="Pacote Completo (Tráfego + Design + Web)">Pacote Completo (Tráfego + Design + Web)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submit-btn"
+                        class="w-full py-4 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:opacity-95 text-white font-bold text-base transition shadow-lg shadow-sky-500/20 flex items-center justify-center gap-2">
+                        <span>Enviar Solicitação de Orçamento</span>
+                    </button>
+                </form>
+
+                <!-- Feedback de Sucesso -->
+                <div id="form-feedback" class="hidden mt-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-sm text-center">
+                    <p class="font-semibold text-base mb-1">✅ Cadastro enviado com sucesso!</p>
+                    <p>Seus dados foram registrados na planilha de atendimento. Em breve entrarei em contato pelo WhatsApp informado.</p>
+                    <a id="direct-wa-btn" href="#" target="_blank" class="inline-block mt-3 px-4 py-2 rounded-lg bg-emerald-500 text-zinc-950 font-semibold text-xs hover:bg-emerald-400 transition">
+                        Agilizar atendimento pelo meu WhatsApp →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-900 py-10 px-4 sm:px-6 text-sm text-zinc-500">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <p class="text-zinc-300 font-semibold">Victor Medeiros • Soluções Digitais</p>
+                <p class="text-xs mt-1">Sobral – CE • (+55) 88 99462-2281 • victoemvasco02@gmail.com</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="openAdminModal()" class="text-xs text-zinc-500 hover:text-emerald-400 transition flex items-center gap-1.5 border border-zinc-800 px-3 py-1.5 rounded-lg">
+                    📊 Área do Gestor • Google Sheets
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Área do Gestor (Visualização Sincronizada com Google Sheets) -->
+    <div id="admin-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl max-w-4xl w-full max-h-[85vh] flex flex-col shadow-2xl">
+            <div class="p-6 border-b border-zinc-800 flex flex-wrap items-center justify-between gap-3">
+                <div>
+                    <h3 class="text-xl font-bold text-white">Banco de Dados — Google Sheets (Leads)</h3>
+                    <p class="text-xs text-emerald-400 mt-0.5" id="db-status-label">Conectado ao Google Sheets</p>
+                </div>
+                <div class="flex items-center gap-2.5">
+                    <button onclick="fetchSheetsLeads()" class="px-3.5 py-2 rounded-lg bg-sky-500/10 border border-sky-500/30 text-sky-400 hover:bg-sky-500/20 text-xs font-semibold transition">
+                        🔄 Atualizar Planilha
+                    </button>
+                    <button onclick="exportLeadsCSV()" class="px-3.5 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 text-xs font-semibold transition">
+                        📥 Exportar CSV
+                    </button>
+                    <button onclick="closeAdminModal()" class="w-8 h-8 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-300 flex items-center justify-center">
+                        ✕
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tela de Senha (Sem dica exposta) -->
+            <div id="admin-pin-screen" class="p-10 text-center">
+                <p class="text-sm text-zinc-300 mb-4">Digite a senha de acesso restrito para visualizar os leads da planilha:</p>
+                <div class="flex justify-center gap-2 max-w-xs mx-auto">
+                    <input type="password" id="admin-pin-input" placeholder="Senha" maxlength="20"
+                        class="w-full px-4 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-center text-white tracking-wider focus:outline-none focus:border-sky-500">
+                    <button onclick="unlockAdmin()" class="px-5 py-2.5 rounded-xl bg-sky-500 text-zinc-950 font-semibold text-sm hover:bg-sky-400 transition">
+                        Entrar
+                    </button>
+                </div>
+                <p id="pin-error" class="text-xs text-rose-400 mt-2 hidden">Senha incorreta.</p>
+            </div>
+
+            <!-- Tabela de Leads -->
+            <div id="admin-leads-screen" class="hidden p-6 overflow-y-auto flex-1">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="border-b border-zinc-800 text-zinc-400 text-xs uppercase">
+                                <th class="py-3 px-3">Data</th>
+                                <th class="py-3 px-3">Nome</th>
+                                <th class="py-3 px-3">Nicho / Empresa</th>
+                                <th class="py-3 px-3">Telefone</th>
+                                <th class="py-3 px-3">Interesse</th>
+                                <th class="py-3 px-3 text-right">Contato</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leads-table-body" class="divide-y divide-zinc-800/60 text-zinc-200">
+                            <tr>
+                                <td colspan="6" class="py-8 text-center text-zinc-500">Carregando registros...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts de Lógica e Integração com Google Sheets (via Google Apps Script) -->
+    <script>
+        const GOOGLE_SHEETS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyTnKhskKB3kiJT4IcCaa5J7gV1O_bYDFAn8Dlg_8YQblnKOGqf6ql5uIr2ZI-X6USIeg/exec";
+
+        let cachedLeads = [];
+
+        // Máscara de Telefone
+        const phoneInput = document.getElementById('lead-phone');
+        phoneInput.addEventListener('input', (e) => {
+            let v = e.target.value.replace(/\D/g, '');
+            if (v.length > 11) v = v.slice(0, 11);
+            if (v.length > 6) {
+                v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+            } else if (v.length > 2) {
+                v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+            } else if (v.length > 0) {
+                v = `(${v}`;
+            }
+            e.target.value = v;
+        });
+
+        // Checkbox "Ainda não tenho empresa"
+        const noCompanyCheck = document.getElementById('no-company-check');
+        const nicheInput = document.getElementById('lead-niche');
+        noCompanyCheck.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                nicheInput.value = "Sem empresa definida / Projeto pessoal";
+                nicheInput.readOnly = true;
+                nicheInput.classList.add('opacity-60');
+            } else {
+                nicheInput.value = "";
+                nicheInput.readOnly = false;
+                nicheInput.classList.remove('opacity-60');
+                nicheInput.focus();
+            }
+        });
+
+        // Envio do Formulário de Cadastro para o Google Sheets
+        const leadForm = document.getElementById('lead-form');
+        leadForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            btn.disabled = true;
+            btn.innerHTML = '<span>Gravando na planilha...</span>';
+
+            const leadData = {
+                dataFormatada: new Date().toLocaleString('pt-BR'),
+                nome: document.getElementById('lead-name').value.trim(),
+                nicho: document.getElementById('lead-niche').value.trim(),
+                telefone: document.getElementById('lead-phone').value.trim(),
+                servico: document.getElementById('lead-service').value
+            };
+
+            try {
+                // Salva backup local
+                const localLeads = JSON.parse(localStorage.getItem('victor_medeiros_sheets_backup') || '[]');
+                localLeads.unshift(leadData);
+                localStorage.setItem('victor_medeiros_sheets_backup', JSON.stringify(localLeads));
+
+                // Envia para a Planilha Google Sheets via Apps Script
+                await fetch(GOOGLE_SHEETS_WEBAPP_URL, {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: {
+                        "Content-Type": "text/plain;charset=utf-8"
+                    },
+                    body: JSON.stringify(leadData)
+                });
+
+                // Link direto para WhatsApp do Victor Medeiros
+                const msg = encodeURIComponent(`Olá Victor! Acabei de cadastrar meus dados no seu portfólio.\n\n*Nome:* ${leadData.nome}\n*Nicho/Empresa:* ${leadData.nicho}\n*Interesse:* ${leadData.servico}`);
+                document.getElementById('direct-wa-btn').href = `https://wa.me/5588994622281?text=${msg}`;
+
+                document.getElementById('form-feedback').classList.remove('hidden');
+                leadForm.reset();
+                nicheInput.readOnly = false;
+                nicheInput.classList.remove('opacity-60');
+            } catch (err) {
+                alert("Erro ao enviar para a planilha. Verifique sua conexão e tente novamente.");
+                console.error(err);
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<span>Enviar Solicitação de Orçamento</span>';
+            }
+        });
+
+        // Buscar registros diretamente do Google Sheets
+        async function fetchSheetsLeads() {
+            const tbody = document.getElementById('leads-table-body');
+            const statusLabel = document.getElementById('db-status-label');
+            tbody.innerHTML = '<tr><td colspan="6" class="py-8 text-center text-zinc-400">Sincronizando dados com a planilha...</td></tr>';
+
+            try {
+                const response = await fetch(GOOGLE_SHEETS_WEBAPP_URL);
+                const data = await response.json();
+                if (Array.isArray(data)) {
+                    statusLabel.textContent = `Conectado ao Google Sheets • ${data.length} registro(s) encontrado(s)`;
+                    statusLabel.className = "text-xs text-emerald-400 mt-0.5";
+                    renderLeadsTable(data);
+                    return;
+                }
+            } catch (err) {
+                console.warn("Exibindo backup local:", err);
+                statusLabel.textContent = "Exibindo registros em cache local";
+                statusLabel.className = "text-xs text-amber-400 mt-0.5";
+            }
+
+            const localLeads = JSON.parse(localStorage.getItem('victor_medeiros_sheets_backup') || '[]');
+            renderLeadsTable(localLeads);
+        }
+
+        function renderLeadsTable(leads) {
+            cachedLeads = leads;
+            const tbody = document.getElementById('leads-table-body');
+            if (!leads.length) {
+                tbody.innerHTML = '<tr><td colspan="6" class="py-8 text-center text-zinc-500">Nenhum cliente cadastrado ainda.</td></tr>';
+                return;
+            }
+            tbody.innerHTML = leads.map(lead => {
+                const cleanPhone = String(lead.telefone || '').replace(/\D/g, '');
+                const waText = encodeURIComponent(`Olá ${lead.nome}, tudo bem? Vi seu cadastro na minha planilha sobre ${lead.servico} (${lead.nicho}) e gostaria de conversar sobre seu orçamento!`);
+                return `
+                    <tr class="hover:bg-zinc-800/40 transition">
+                        <td class="py-3 px-3 text-xs text-zinc-400 whitespace-nowrap">${lead.dataFormatada || '-'}</td>
+                        <td class="py-3 px-3 font-medium text-white">${lead.nome}</td>
+                        <td class="py-3 px-3 text-zinc-300">${lead.nicho}</td>
+                        <td class="py-3 px-3 text-sky-400 whitespace-nowrap">${lead.telefone}</td>
+                        <td class="py-3 px-3 text-xs text-zinc-400">${lead.servico || '-'}</td>
+                        <td class="py-3 px-3 text-right whitespace-nowrap">
+                            <a href="https://wa.me/55${cleanPhone}?text=${waText}" target="_blank"
+                               class="inline-block px-3 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500 hover:text-zinc-950 text-xs font-semibold transition">
+                                Chamar no WhatsApp
+                            </a>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // Exportar CSV
+        function exportLeadsCSV() {
+            if (!cachedLeads.length) return alert("Não há leads para exportar.");
+            const headers = ["Data", "Nome", "Nicho/Empresa", "Telefone", "Servico"];
+            const rows = cachedLeads.map(l => [
+                `"${l.dataFormatada || ''}"`,
+                `"${l.nome || ''}"`,
+                `"${l.nicho || ''}"`,
+                `"${l.telefone || ''}"`,
+                `"${l.servico || ''}"`
+            ].join(","));
+            const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows].join("\n");
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "leads_victor_medeiros_sheets.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Filtros e Modal
+        function filterServices(category) {
+            const buttons = document.querySelectorAll('#filter-buttons button');
+            buttons.forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.classList.add('tab-active');
+                    btn.classList.remove('bg-zinc-900', 'text-zinc-400');
+                } else {
+                    btn.classList.remove('tab-active');
+                    btn.classList.add('bg-zinc-900', 'text-zinc-400');
+                }
+            });
+
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function selectServiceForQuote(serviceName) {
+            const select = document.getElementById('lead-service');
+            select.value = serviceName;
+            document.getElementById('orcamento').scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => document.getElementById('lead-name').focus(), 600);
+        }
+
+        function openAdminModal() {
+            document.getElementById('admin-modal').classList.remove('hidden');
+            document.getElementById('admin-pin-input').focus();
+        }
+
+        function closeAdminModal() {
+            document.getElementById('admin-modal').classList.add('hidden');
+        }
+
+        async function sha256(message) {
+            if (window.crypto && window.crypto.subtle) {
+                const msgBuffer = new TextEncoder().encode(message);
+                const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            }
+            return null;
+        }
+
+        async function unlockAdmin() {
+            const pass = document.getElementById('admin-pin-input').value.trim();
+            const hashedInput = await sha256(pass);
+            const EXPECTED_HASH = "40d7f429226159bfcba8f6d22536c49f9a903978e4af97c6b9cd8b3c78c53217";
+            const isValid = hashedInput ? (hashedInput === EXPECTED_HASH) : (btoa(pass) === "dmljdG9yNzUz");
+            if (isValid) {
+                document.getElementById('admin-pin-screen').classList.add('hidden');
+                document.getElementById('admin-leads-screen').classList.remove('hidden');
+                document.getElementById('pin-error').classList.add('hidden');
+                fetchSheetsLeads();
+            } else {
+                document.getElementById('pin-error').classList.remove('hidden');
+            }
+        }
+
+        document.getElementById('admin-pin-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') unlockAdmin();
+        });
+    </script>
+</body>
+</html>
